@@ -1,4 +1,3 @@
-
 export enum Gender {
   MALE = 'male',
   FEMALE = 'female',
@@ -7,7 +6,7 @@ export enum Gender {
 
 export enum MaritalStatus {
   MARRIED = 'married',
-  SINGLE = 'single'
+  NOT_MARRIED = 'not_married'
 }
 
 export enum ResidenceType {
@@ -31,30 +30,37 @@ export enum SmokingStatus {
 }
 
 export interface PatientData {
-  age: number;
-  gender: Gender;
-  hypertension: boolean;
-  heart_disease: boolean;
-  ever_married: MaritalStatus;
-  work_type: EmploymentType;
-  residence_type: ResidenceType;
-  avg_glucose_level: number;
-  bmi: number;
-  smoking_status: SmokingStatus;
+  age: number
+  gender: Gender
+  hypertension: boolean
+  heart_disease: boolean
+  ever_married: MaritalStatus
+  work_type: EmploymentType
+  residence_type: ResidenceType
+  avg_glucose_level: number
+  bmi: number
+  smoking_status: SmokingStatus
 }
 
+/* kết quả AI prediction */
 export interface PredictionResult {
-  riskScore: number;
-  riskLevel: 'Low' | 'Moderate' | 'High' | 'Critical';
-  explanation: string;
-  topTriggers: string[];
-  recommendations: string[];
+  riskScore: number
+  riskLevel: 'Low' | 'Moderate' | 'High' | 'Critical'
+  explanation: string
+  topTriggers: string[]
+  recommendations: string[]
 }
 
+/* record lưu trong dashboard / history */
 export interface ClinicalRecord extends PatientData {
-  id: string;
-  timestamp: number;
-  riskLevel: string;
-  riskScore: number;
-  engine: 'gemini' | 'custom';
+  id: string
+  timestamp: number
+
+  riskScore: number
+  riskLevel: 'Low' | 'Moderate' | 'High' | 'Critical'
+
+  engine: 'gemini' | 'custom'
+
+  /* thêm field này để fix lỗi */
+  stroke: 0 | 1
 }
