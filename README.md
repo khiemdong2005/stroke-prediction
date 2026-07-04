@@ -25,7 +25,7 @@
 
 The research paper presents the dataset analysis, preprocessing pipeline, model comparison, evaluation metrics, and key findings of this project.
 
-[Read the StrokeAI Research Paper](docs/reports/StrokeAI_Stroke_Risk_Prediction_Study.pdf)
+[Read the StrokeAI Research Paper](docs/reports/StrokeAI_Machine_Learning_Study.pdf)
 
 ---
 
@@ -305,7 +305,7 @@ heart-stroke-prediction/
 │   ├── images/
 │   │   └── workflow.png
 │   └── reports/
-│       └── StrokeAI_Stroke_Risk_Prediction_Study.pdf
+│       └── StrokeAI_Machine_Learning_Study.pdf
 │
 ├── .gitignore
 └── README.md
@@ -452,7 +452,7 @@ It must not:
 
 ## Acknowledgments
 
-- Kaggle Healthcare Stroke Datasetgit add README.md
+- Kaggle Healthcare Stroke Dataset
 - FastAPI
 - Scikit-learn
 - React and TypeScript
