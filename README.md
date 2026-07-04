@@ -17,7 +17,15 @@
 
 [Open StrokeAI Web Interface](https://stroke-prediction-gamma.vercel.app/)
 
-> **Note:** The public deployment currently provides a frontend interface preview only. Prediction and chatbot services require the FastAPI backend to run locally.
+> **Note:** The public Vercel deployment currently provides a frontend interface preview only. Prediction and chatbot services require the FastAPI backend to run locally.
+
+---
+
+## Project Paper
+
+The research paper presents the dataset analysis, preprocessing pipeline, model comparison, evaluation metrics, and key findings of this project.
+
+[Read the StrokeAI Research Paper](docs/reports/StrokeAI_Stroke_Risk_Prediction_Study.pdf)
 
 ---
 
@@ -25,7 +33,15 @@
 
 StrokeAI is a healthcare support platform that uses machine learning to estimate stroke risk from demographic, clinical, and lifestyle-related information.
 
-The project combines data analysis, predictive modeling, a web-based risk assessment interface, health metric alerts, an analytics dashboard, and a basic chatbot for general health-related explanations.
+The project combines:
+
+- Exploratory Data Analysis
+- Data preprocessing and feature engineering
+- Machine learning model comparison
+- Stroke-risk prediction through FastAPI
+- React and TypeScript web interface
+- Analytics dashboard
+- Basic health support chatbot
 
 ### Objectives
 
@@ -265,29 +281,31 @@ Result Displayed to User
 heart-stroke-prediction/
 │
 ├── backend/
-│   ├── models/                     # Saved ML model files
+│   ├── models/
 │   │   └── stroke_risk_model.pkl
-│   ├── app.py                      # FastAPI application entry point
-│   ├── requirements.txt            # Python dependencies
-│   └── .env.local                  # Local secrets - ignored by Git
+│   ├── app.py
+│   ├── requirements.txt
+│   └── .env.local
 │
 ├── frontend/
-│   ├── components/                 # Reusable UI components
-│   ├── pages/                      # Application pages
-│   ├── services/                   # Backend API communication
-│   ├── App.tsx                     # Main application component
-│   ├── index.tsx                   # React entry point
-│   ├── package.json                # Frontend dependencies
-│   ├── vite.config.ts              # Vite configuration
-│   └── .env.local                  # Local frontend settings - ignored by Git
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.tsx
+│   ├── index.tsx
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── .env.local
 │
 ├── notebooks/
 │   ├── EDA.ipynb
 │   └── Preprocessing and train.ipynb
 │
 ├── docs/
-│   └── images/
-│       └── workflow.png
+│   ├── images/
+│   │   └── workflow.png
+│   └── reports/
+│       └── StrokeAI_Stroke_Risk_Prediction_Study.pdf
 │
 ├── .gitignore
 └── README.md
@@ -306,8 +324,6 @@ Install:
 - npm
 
 ### 1. Start the Backend
-
-Open a terminal in the project root:
 
 ```bash
 cd backend
@@ -436,7 +452,7 @@ It must not:
 
 ## Acknowledgments
 
-- Kaggle Healthcare Stroke Dataset
+- Kaggle Healthcare Stroke Datasetgit add README.md
 - FastAPI
 - Scikit-learn
 - React and TypeScript
