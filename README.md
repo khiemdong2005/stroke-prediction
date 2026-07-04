@@ -5,11 +5,19 @@
 ![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Scikit--learn-F7931E)
 ![Frontend](https://img.shields.io/badge/Frontend-React%20%2B%20TypeScript-61DAFB?logo=react&logoColor=white)
 ![Build Tool](https://img.shields.io/badge/Build-Vite-646CFF?logo=vite&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Local%20Development-yellow)
+![Deployment](https://img.shields.io/badge/Frontend-Live%20on%20Vercel-brightgreen)
 
 > An end-to-end machine learning web application for stroke-risk screening, healthcare data analysis, and user-oriented health support.
 
 > ⚠️ **Medical Disclaimer:** StrokeAI is developed for academic and educational purposes only. It is not a medical device and must not be used for clinical diagnosis, emergency decisions, or treatment recommendations.
+
+---
+
+## Live Demo
+
+[Open StrokeAI Web Interface](https://stroke-prediction-gamma.vercel.app/)
+
+> **Note:** The public deployment currently provides a frontend interface preview only. Prediction and chatbot services require the FastAPI backend to run locally.
 
 ---
 
@@ -47,7 +55,7 @@ Users can enter health and demographic information such as:
 - Marital status
 - Smoking status
 
-The system returns:
+When the local FastAPI backend is running, the system returns:
 
 - Stroke-risk probability
 - High-risk or Low-risk classification
@@ -81,8 +89,6 @@ A basic chatbot provides general educational information about:
 ## End-to-End Workflow
 
 ![StrokeAI Workflow](docs/images/workflow.png)
-
-The project workflow covers:
 
 ```text
 Dataset Collection
@@ -199,7 +205,7 @@ The preprocessing workflow includes:
 
 ### Selected Model
 
-The deployed model is **Logistic Regression with L2 regularization** because it provides:
+The local FastAPI backend uses **Logistic Regression with L2 regularization** because it provides:
 
 - Strong predictive performance
 - Probability output for risk estimation
@@ -260,6 +266,7 @@ heart-stroke-prediction/
 │
 ├── backend/
 │   ├── models/                     # Saved ML model files
+│   │   └── stroke_risk_model.pkl
 │   ├── app.py                      # FastAPI application entry point
 │   ├── requirements.txt            # Python dependencies
 │   └── .env.local                  # Local secrets - ignored by Git
@@ -282,7 +289,6 @@ heart-stroke-prediction/
 │   └── images/
 │       └── workflow.png
 │
-├── small_data.csv                  # Lightweight demo or test data
 ├── .gitignore
 └── README.md
 ```
@@ -390,19 +396,21 @@ These files may contain local API URLs, chatbot keys, or other sensitive configu
 
 ## Current Limitations
 
+- The public Vercel deployment currently contains the frontend interface only.
+- Prediction and chatbot services require the local FastAPI backend.
 - The model is trained on a public Kaggle dataset rather than real hospital data.
 - The dataset has severe class imbalance.
 - External clinical validation has not yet been performed.
 - The model is intended for risk screening, not medical diagnosis.
 - Real-time hospital-data integration is not available.
 - The chatbot provides basic educational support only.
-- The application currently runs locally and has not yet been deployed publicly.
 
 ---
 
 ## Future Improvements
 
-- Deploy the frontend and backend publicly.
+- Deploy the FastAPI backend publicly.
+- Connect the Vercel frontend to the deployed backend API.
 - Add authentication and stronger security controls.
 - Integrate explainable AI methods such as SHAP.
 - Compare additional models such as Random Forest, XGBoost, and LightGBM.
